@@ -1,4 +1,4 @@
 import ReactDOM from 'react-dom'
-import {Application} from './application'
+import {ApplicationComponent} from './application'
 
-ReactDOM.render(<Application />, document.getElementById('root'))
+ReactDOM.render(<ApplicationComponent />, document.getElementById('root'))
