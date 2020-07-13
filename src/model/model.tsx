@@ -29,6 +29,8 @@ export const ALL_STATUS: Status[] = Object.values(Status)
 
 export type Cards = List<Card>
 
+export type Statuses = Map<BookID, Status>
+
 export type Tab = {
     status: Status
     title: string

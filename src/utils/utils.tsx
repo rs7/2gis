@@ -1,3 +1,5 @@
+import {List} from '../model/model'
+
 export function randomItem<T>(list: Array<T>): T {
     return list[list.length * Math.random() | 0]
 }
@@ -54,4 +56,8 @@ function* sequenceGenerator() {
 export interface Decoder<T> {
     decode(value: string): T
     encode(value: T): string
+}
+
+export function isEmptyList(list:List<any>): boolean {
+    return list.length === 0
 }

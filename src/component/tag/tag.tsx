@@ -13,7 +13,7 @@ function TagComponent(props: TagComponentProps) {
 
 interface TagListComponentProps {
     tags: Tags
-    onTagAction(tag: Tag): void;
+    onTagAction(tag: Tag): void
 }
 
 export function TagListComponent(props: TagListComponentProps) {
@@ -22,7 +22,7 @@ export function TagListComponent(props: TagListComponentProps) {
     return (
         <span>
             {
-                tags.map(tag => <TagComponent tag={tag} onAction={onTagAction} key={tag} />)
+                tags.map(tag => <TagComponent tag={tag} onAction={() => onTagAction(tag)} key={tag} />)
             }
         </span>
     )
