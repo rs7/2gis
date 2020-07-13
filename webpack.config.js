@@ -19,7 +19,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                'src/favicon.ico',
+                'src/favicon.png',
                 'src/index.css',
                 'src/index.html',
             ],
