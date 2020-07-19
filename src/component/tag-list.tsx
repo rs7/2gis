@@ -1,15 +1,5 @@
-import {Tag, Tags} from '../../model/model'
-import {LinkButton} from '../ui/ui'
-
-interface TagComponentProps {
-    tag: Tag
-    onAction(): void
-}
-
-function TagComponent(props: TagComponentProps) {
-    let {tag, onAction} = props
-    return <LinkButton onAction={onAction}>#{tag}</LinkButton>
-}
+import { TagComponent } from 'component/tag'
+import { Tag, Tags } from 'model/model'
 
 interface TagListComponentProps {
     tags: Tags
@@ -17,7 +7,7 @@ interface TagListComponentProps {
 }
 
 export function TagListComponent(props: TagListComponentProps) {
-    let {tags, onTagAction} = props
+    let { tags, onTagAction } = props
 
     return (
         <span>

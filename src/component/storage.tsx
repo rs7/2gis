@@ -1,7 +1,8 @@
-import {Component} from 'react'
-import {ApplicationStorage, SimpleStorage} from '../../service/service'
-import {Cards, Statuses} from '../../model/model'
-import {Loading} from '../loading/loading'
+import { Loading } from 'component/loading'
+import { Cards, Statuses } from 'model/model'
+import { Component } from 'react'
+import { ApplicationStorage, SimpleStorage } from 'service/service'
+
 
 interface StorageComponentProps {
     children: React.ReactNode
@@ -28,13 +29,13 @@ export class StorageComponent extends Component<StorageComponentProps, StorageCo
     }
 
     componentDidMount() {
-        this.storage.getCards().then(cards => this.setState({cards}))
-        this.storage.getStatuses().then(statuses => this.setState({statuses}))
+        this.storage.getCards().then(cards => this.setState({ cards }))
+        this.storage.getStatuses().then(statuses => this.setState({ statuses }))
     }
 
     render() {
-        let {children} = this.props
-        let {cards, statuses} = this.state
+        let { children } = this.props
+        let { cards, statuses } = this.state
 
         if (cards === undefined || statuses === undefined) return <Loading />
 

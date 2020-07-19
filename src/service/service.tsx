@@ -6,6 +6,11 @@ export interface ApplicationStorage {
     getStatuses(): Promise<Statuses>
 }
 
+export interface StatusStorage {
+    getStatuses(books: Set<BookID>): Map<BookID, Status>
+    setStatus(bookID: BookID, status: Status): void
+}
+
 export class SimpleStorage implements ApplicationStorage {
     async getCards(): Promise<Cards> {
         let json = await loadJSON(`https://raw.githubusercontent.com/lastw/test-task/master/data/10-items.json`)
@@ -17,13 +22,4 @@ export class SimpleStorage implements ApplicationStorage {
         await timeout(1000)
         return new Map()
     }
-}
-
-export interface CardsFilter {
-    filter(cards: Cards, filter: Filter): FilteredCards
-}
-
-export interface StatusStorage {
-    getStatus(bookID: BookID): Status
-    setStatus(bookID: BookID, status: Status): void
 }

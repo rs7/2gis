@@ -1,6 +1,7 @@
-import {Cards, Filter, Status, Tags, Tag} from '../../model/model'
-import {StatusFilterComponent, TagFilterComponent} from '../filter/filter'
-import {CardListComponent} from '../list/list'
+import { CardListComponent } from 'component/card-list'
+import { StatusFilterComponent } from 'component/status-filter'
+import { TagFilterComponent } from 'component/tag-filter'
+import { Cards, Filter, Status, Tag } from 'model/model'
 
 interface MainComponentProps {
     cards: Cards
@@ -9,9 +10,9 @@ interface MainComponentProps {
 }
 
 export function MainComponent(props: MainComponentProps) {
-    let {cards, filter, onFilterChange} = props
+    let { cards, filter, onFilterChange } = props
 
-    let {status, tags} = filter
+    let { status, tags } = filter
 
     let onStatusChange = (status: Status) => console.log('onStatusChange', status)
 
